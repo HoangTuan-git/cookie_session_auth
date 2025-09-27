@@ -37,7 +37,7 @@ Tip: create a Collection, add the 4 requests below, and use the base URL `http:/
   }
   ```
 - Expected: `200 OK` with `{ "message": "User registered successfully!" }`.
-![alt text](/img/image-1.png)
+![alt text](img/image-1.png)
 - Check in Database
 ![alt text](/img/image-2.png)
 - Note: Duplicate `username` returns `400 Bad Request`.
@@ -54,20 +54,26 @@ Tip: create a Collection, add the 4 requests below, and use the base URL `http:/
 - Expected: `200 OK` with `{ "message": "Login successful!" }`.
 ![alt text](/img/image-3.png)
 - Check in Database
-![alt text](/img/image-4.png)
+![alt text](<img/Screenshot 2025-09-27 102956.png>)
 - Postman will store the `connect.sid` Set-Cookie in the Cookie Jar for `localhost`.
 
 3) Profile (requires `connect.sid`)
 - Method: GET
 - URL: `http://localhost:3000/auth/profile`
 - Expected when logged in: `200 OK` with user info (no `password` field).
+![alt text](<img/Screenshot 2025-09-27 103140.png>)
+
 - If not logged in or cookie missing: `401 Unauthorized`.
 
 4) Logout
 - Method: GET
 - URL: `http://localhost:3000/auth/logout`
 - Expected: `200 OK` with `{ "message": "Logout successful!" }` and cookie cleared.
+![alt text](<img/Screenshot 2025-09-27 103408.png>)
+- - Check in Database
+![alt text](<img/Screenshot 2025-09-27 103451.png>)
 - Calling step (3) again should return `401 Unauthorized`.
+
 
 
 ## Common issues and quick fixes
