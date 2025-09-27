@@ -37,8 +37,10 @@ Tip: create a Collection, add the 4 requests below, and use the base URL `http:/
   }
   ```
 - Expected: `200 OK` with `{ "message": "User registered successfully!" }`.
+![alt text](image-1.png)
+- Check in Database
+![alt text](image-2.png)
 - Note: Duplicate `username` returns `400 Bad Request`.
-
 2) Login (receive session cookie)
 - Method: POST
 - URL: `http://localhost:3000/auth/login`
@@ -50,6 +52,9 @@ Tip: create a Collection, add the 4 requests below, and use the base URL `http:/
   }
   ```
 - Expected: `200 OK` with `{ "message": "Login successful!" }`.
+![alt text](image-3.png)
+- Check in Database
+![alt text](image-4.png)
 - Postman will store the `connect.sid` Set-Cookie in the Cookie Jar for `localhost`.
 
 3) Profile (requires `connect.sid`)
